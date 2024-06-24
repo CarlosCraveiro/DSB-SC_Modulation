@@ -2,7 +2,8 @@
 with pkgs;
 mkShell {
     buildInputs = [
-        octave
+        ghostscript
+        octaveFull 
     ];
     shellHook = ''
         #...

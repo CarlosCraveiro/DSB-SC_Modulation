@@ -1,5 +1,5 @@
 # Project - Communication Principles
-This project was developed as an assignment for the SEL0616 - Communication Principles discipline, offered in the first semester of 2024 by professor Mateus Isaac de Oliveira Souza.
+This project was developed as an assignment for the SEL0616 - Communication Principles discipline, offered in the first semester of 2024 by professor Mateus Isaac de Oliveira Souza at the Electrical and Computing Engineering Department - SEL, São Carlos School of Engineering - EESC, University of São Paulo - USP, Brazil.
 
 ## Introduction:
 This project aims to practically expose, using code examples, the knowledge learned during the course regarding amplitude modulation and demodulation (AM), specifically **Double-SideBand Suppressed-Carrier modulation, or DSB-SC**, and **Synchronous Demodulation***.
@@ -56,8 +56,15 @@ octave> fc=500000 # Sets the frequency of the carrier to 0.5MHz
 octave> main
 ```
 
-Some of the plots that you should see are...
+Some of the plots that you should see are:
 
+![original_message](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/03_fc_2000_kHz_message_time_plot.png)
+
+![modulated_message_time_plot](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/05_fc_2000_kHz_modulated_message_time_plot.png)
+
+![Demodulated_message_spectrum_with_filter](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/08_fc_2000_kHz_demodulated_message_and_filter_freq_plot.png)
+
+![recovered_message](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/09_fc_2000_kHz_demodulated_message_post_LPF_time_plot.png)
 ## Authors:
 | Student                               | USP Registration Number |
 |---------------------------------------| ----------------------- |

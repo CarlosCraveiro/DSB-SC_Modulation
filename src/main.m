@@ -7,7 +7,7 @@
 %            Beatriz Aimee   - USP ID 12547934
 %
 % Created:  2024-24-06
-% Modified: 2024-24-06
+% Modified: 2024-25-06
 %
 % This file is part of the SEL0616 - Communication Principles Final Assignment project.
 %
@@ -56,6 +56,9 @@ A = 1.1; % Carrier amplitude
 
 c = A*cos(t.*(fc*2*pi)); % Samples the carrier wave
 
+purple = [0.58, 0, 0.82];
+magenta = [0.82,0,0.50];
+
 %% The first plot : Carrier Wave Time Plot
 
 [time, carrier] = delimit_window(t, c, 0, 5*micro); % Delimits the Plot Window
@@ -63,7 +66,7 @@ c = A*cos(t.*(fc*2*pi)); % Samples the carrier wave
 figure(1)
 title_text = sprintf('Portadora c(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/01_fc_%d_kHz_carrier_time_plot.png', fc/1000);
-plot(time./micro, carrier, 'LineWidth', 1.5);
+plot(time./micro, carrier, 'Color', purple, 'LineWidth', 1.5);
 xlabel('Tempo (\mus)');
 ylabel('Amplitude');
 title(title_text)
@@ -92,7 +95,7 @@ file_path = sprintf('../plots/02_fc_%d_kHz_carrier_freq_plot.png', fc/1000);
 
 % Negative part of the spectrum
 subplot(2, 2, 1);
-plot(neg_freq_values./mega, abs(amp_normalize(neg_freq_spectrum)), 'LineWidth', 1.5);
+plot(neg_freq_values./mega, abs(amp_normalize(neg_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5);
 xlabel('Frequência (MHz)');
 ylabel('Magnitude Normalizada');
 title(title_text);
@@ -101,7 +104,7 @@ grid on;
 
 % Positive part of the spectrum
 subplot(2, 2, 2);
-plot(pos_freq_values./mega, abs(amp_normalize(pos_freq_spectrum)), 'LineWidth', 1.5);
+plot(pos_freq_values./mega, abs(amp_normalize(pos_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5);
 xlabel('Frequência (MHz)');
 ylabel('Magnitude Normalizada');
 title(title_text2);
@@ -120,7 +123,7 @@ m = sinc((t - 100*micro)*mega); % Samples the message
 figure(3)
 title_text = sprintf('Mensagem m(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/03_fc_%d_kHz_message_time_plot.png', fc/1000);
-plot(time./micro, message, 'LineWidth', 1.5);
+plot(time./micro, message, 'Color', purple, 'LineWidth', 1.5);
 xlabel('Tempo (\mus)');
 ylabel('Amplitude');
 title(title_text);
@@ -138,7 +141,7 @@ m_ft = fftshift(fft(m))*Ts; % Obtain samples of the fourier transform
 figure(4)
 title_text = sprintf('Espectro da mensagem m(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/04_fc_%d_kHz_message_freq_plot.png', fc/1000);
-plot(frequency./mega, abs(amp_normalize(message_freq_spectrum)), 'LineWidth', 1.5);
+plot(frequency./mega, abs(amp_normalize(message_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5);
 xlabel('Frequência (MHz)');
 ylabel('Magnitude Normalizada');
 title(title_text);
@@ -159,7 +162,7 @@ mc = c .* m;
 figure(5)
 title_text = sprintf('Mensagem m(t) modulada com portadora c(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/05_fc_%d_kHz_modulated_message_time_plot.png', fc/1000);
-plot(time./micro, modulated_message, 'LineWidth', 1.5)
+plot(time./micro, modulated_message, 'Color', purple, 'LineWidth', 1.5)
 xlabel('Tempo (\mus)');
 ylabel('Amplitude');
 title(title_text);
@@ -178,7 +181,7 @@ mc_ft = fftshift(fft(mc))*Ts; % Obtain samples of the fourier transform
 figure(6)
 title_text = sprintf('Espectro da mensage m(t) modulada com portadora c(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/06_fc_%d_kHz_modulated_message_freq_plot.png', fc/1000);
-plot(frequency./mega, abs(amp_normalize(mod_m_freq_spectrum)), 'LineWidth', 1.5);
+plot(frequency./mega, abs(amp_normalize(mod_m_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5);
 xlabel('Frequência (MHz)');
 ylabel('Magnitude Normalizada');
 title(title_text);
@@ -202,7 +205,7 @@ dmc_ft = fftshift(fft(dmc))*Ts; % Obtain samples of the fourier transform
 figure(7)
 title_text = sprintf('Espectro da mensage demodulada dm(t), fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/07_fc_%d_kHz_demodulated_message_freq_plot.png', fc/1000);
-plot(frequency./mega, abs(amp_normalize(dmod_m_freq_spectrum)), 'LineWidth', 1.5);
+plot(frequency./mega, abs(amp_normalize(dmod_m_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5);
 xlabel('Frequência (MHz)');
 ylabel('Magnitude Normalizada');
 title(title_text);
@@ -222,9 +225,9 @@ rect_filter(find(f >= -2.0*mega & f <= 2.0*mega)) = 1; % Defines the passband
 figure(8);
 title_text = sprintf('Espectro da mensagem demodulada e do filtro, fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/08_fc_%d_kHz_demodulated_message_and_filter_freq_plot.png', fc/1000);
-plot(frequency./mega, abs(amp_normalize(dmod_m_freq_spectrum)), 'LineWidth', 1.5); % Plot signal
+plot(frequency./mega, abs(amp_normalize(dmod_m_freq_spectrum)), 'Color', purple, 'LineWidth', 1.5); % Plot signal
 hold on;
-plot(frequency./mega, abs(amp_normalize(filter_freq_spectrum)), 'r', 'LineWidth', 1.5); % Plot filter in red
+plot(frequency./mega, abs(amp_normalize(filter_freq_spectrum)), 'Color', magenta, 'LineWidth', 1.5); % Plot filter in red
 
 % Add labels, title and scale
 xlabel('Frequência (MHz)');
@@ -249,9 +252,9 @@ rec_message = ifft(fftshift(recovered_message_ft./Ts)); % uses ifft to recover t
 figure(9)
 title_text = sprintf('Mensagem demodulada após FPB, fc = %.1f MHz', fc/mega);
 file_path = sprintf('../plots/09_fc_%d_kHz_demodulated_message_post_LPF_time_plot.png', fc/1000);
-plot(time./micro, real(recovered_message), 'LineWidth', 1.5);
+plot(time./micro, real(recovered_message), 'Color', purple, 'LineWidth', 1.5);
 hold on;
-plot(time./micro, real(original_message), 'r');
+plot(time./micro, real(original_message), 'Color', magenta);
 xlabel('Tempo (\mus)');
 ylabel('Amplitude');
 title(title_text);

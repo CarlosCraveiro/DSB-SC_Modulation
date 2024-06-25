@@ -2,7 +2,7 @@
 This project was developed as an assignment for the SEL0616 - Communication Principles discipline, offered in the first semester of 2024 by professor Mateus Isaac de Oliveira Souza at the Electrical and Computing Engineering Department - SEL, São Carlos School of Engineering - EESC, University of São Paulo - USP, Brazil.
 
 ## Introduction:
-This project aims to practically expose, using code examples, the knowledge learned during the course regarding amplitude modulation and demodulation (AM), specifically **Double-SideBand Suppressed-Carrier modulation, or DSB-SC**, and **Synchronous Demodulation***.
+This project aims to practically expose, using code examples, the knowledge learned during the course regarding amplitude modulation and demodulation (AM), specifically **Double-SideBand Suppressed-Carrier modulation, or DSB-SC**, and **Synchronous Demodulation**.
 
 Two main references were used as a basis for solving the proposed problems. For the conceptual part of Amplitude Modulation (AM), the course's main textbook **Modern Digital and Analog Communication Systems** (Lathi's book) was used, and for the part concerning Digital Signal Processing and the use of the `fft`, `fftshift`, and `ifft` functions, we used Professor Emiliano Rezende Martins' book **Essentials of Signals and Systems**, focusing on Chapter 8 - The Discrete Fourier Transform (DFT).
 

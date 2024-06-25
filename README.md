@@ -62,6 +62,8 @@ Some of the plots that you should see are:
 
 ![modulated_message_time_plot](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/05_fc_2000_kHz_modulated_message_time_plot.png)
 
+![modulated_message_frequency_plot](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/06_fc_2000_kHz_modulated_message_freq_plot.png)
+
 ![Demodulated_message_spectrum_with_filter](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/08_fc_2000_kHz_demodulated_message_and_filter_freq_plot.png)
 
 ![recovered_message](https://github.com/CarlosCraveiro/DSB-SC_Modulation/blob/main/plots/09_fc_2000_kHz_demodulated_message_post_LPF_time_plot.png)
